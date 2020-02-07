@@ -1,17 +1,33 @@
 const express = require('express');
-
+const path = require('path');
 const app = express();
 
+const publicDir = path.join(__dirname, '../public');
+const viewPath = path.join(__dirname, '../templates');
+
+app.set('view engine', 'hbs');
+app.set('views', viewPath);
+app.use(express.static(publicDir));
+
 app.get('', (req, res) => {
-    res.send({
-        hello: 'lado'
+    res.render('index', {
+        title: 'weather app',
+        name: 'sushantey'
     });
 });
-app.get('/help', (req, res) => {
-    res.send('Hello help');
-});
+
 app.get('/about', (req, res) => {
-    res.send('<h1>Weather App</h1>');
+    res.render('about', {
+        hamro: 'weather app',
+        tmro: 'sushantey'
+    });
+});
+
+app.get('/help', (req, res) => {
+    res.render('help', {
+        forecast: 'Khatra jaado xa mug',
+        place: 'Philadelphia'
+    });
 });
 
 app.get('/weather', (req, res) => {
