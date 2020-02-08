@@ -38,7 +38,7 @@ const forecast = (lat, long, callback) => {
                     ' It is ' +
                     body.currently.temperature +
                     ' degrees outside. ' +
-                    'Temperature High: ' +
+                    '\nTemperature High: ' +
                     daily.data[0].temperatureHigh +
                     'Temperature Low : ' +
                     daily.data[0].temperatureLow
