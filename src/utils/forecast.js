@@ -34,7 +34,14 @@ const forecast = (lat, long, callback) => {
         } else {
             callback(
                 undefined,
-                body.daily.data[0].summary + ' It is ' + body.currently.temperature + ' degrees outside. '
+                body.daily.data[0].summary +
+                    ' It is ' +
+                    body.currently.temperature +
+                    ' degrees outside. ' +
+                    'Temperature High: ' +
+                    daily.data[0].temperatureHigh +
+                    'Temperature Low : ' +
+                    daily.data[0].temperatureLow
             );
         }
     });
