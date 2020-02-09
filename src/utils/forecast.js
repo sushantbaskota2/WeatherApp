@@ -39,9 +39,9 @@ const forecast = (lat, long, callback) => {
                     body.currently.temperature +
                     ' degrees outside. ' +
                     '\nTemperature High: ' +
-                    daily.data[0].temperatureHigh +
-                    'Temperature Low : ' +
-                    daily.data[0].temperatureLow
+                    body.daily.data[0].temperatureHigh +
+                    '\nTemperature Low :  ' +
+                    body.daily.data[0].temperatureLow
             );
         }
     });
